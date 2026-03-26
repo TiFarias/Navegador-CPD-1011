@@ -80,7 +80,7 @@ namespace Navegador_CPD
             await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.postMessage(window.document.URL);");
 
             webView.CoreWebView2.Navigate("https://www.atacadaofarias.com.br");
-            webView.CoreWebView2.DownloadStarting += delegate (object sender, CoreWebView2DownloadStartingEventArgs args) {args.Handled = false};
+            webView.CoreWebView2.DownloadStarting += delegate (object sender, CoreWebView2DownloadStartingEventArgs args) {args.Handled = false;};
         }
 
         void UpdateAddressBar(object sender, CoreWebView2WebMessageReceivedEventArgs args)
