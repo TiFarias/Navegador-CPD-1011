@@ -72,7 +72,6 @@ namespace Navegador_CPD
 
         //alterando
         async void InitializeAsync()
-        async void InitializeAsync()
         {
             await webView.EnsureCoreWebView2Async(null);
             webView.CoreWebView2.NavigationCompleted += WebView_NavigationCompleted;
