@@ -33,7 +33,7 @@ namespace Navegador_CPD
         {
            
 
-            InitBrowser();
+            //InitBrowser();
             // verifica se existe o arquivo
             if (!File.Exists(@"\\192.168.10.1\Public\Favoritos navegador cpd\Navegadorcpdfavoritos" + nomeMaquina + ".txt"))
             {
@@ -47,6 +47,8 @@ namespace Navegador_CPD
             }
         }
 
+        //alterando
+        /*
         private async Task Initizated()
         {
             await webView.EnsureCoreWebView2Async(null);  
@@ -66,8 +68,9 @@ namespace Navegador_CPD
             };
 
 
-        }
+        }*/
 
+        //alterando
         async void InitializeAsync()
         {
             await webView.EnsureCoreWebView2Async(null);
@@ -75,6 +78,9 @@ namespace Navegador_CPD
             webView.CoreWebView2.WebMessageReceived += UpdateAddressBar;
 
             await webView.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.postMessage(window.document.URL);");
+
+            webView.CoreWebView2.Navigate("https://www.atacadaofarias.com.br");
+            webView.CoreWebView2.DownloadStarting += delegate (object sender, CoreWebView2DownloadStartingEventArgs args) {args.Handled = false};
         }
 
         void UpdateAddressBar(object sender, CoreWebView2WebMessageReceivedEventArgs args)
