@@ -45,7 +45,13 @@ namespace Navegador_CPD
 
                 // lê os items do arquivo...
                 string[] lines = File.ReadAllLines(@"\\192.168.10.1\Public\Favoritos navegador cpd\Navegadorcpdfavoritos" + nomeMaquina + ".txt");
-                this.comboBox1.Items.AddRange(lines);
+
+                foreach (String cadaItem in lines ) {
+                    if (!comboBox1.Items.Contains(cadaItem)) {
+                        this.comboBox1.Items.Add(lines);
+                    }
+                }
+                //this.comboBox1.Items.AddRange(lines);
             }
         }
 
